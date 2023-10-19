@@ -1,10 +1,4 @@
 ﻿using Client.Models;
-using Safemoney_UnitTest1_NET8.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Client.Classes
 {
@@ -32,9 +26,9 @@ namespace Client.Classes
         {
             return await client.PostAsJsonAsync<SMPay>("pay", payload);
         }
-        public async Task<SMPay> PayDelete(object payload)
-        {
-            return await client.DeleteAsync<SMPay>("pay", payload);
-        }
+        //public async Task<SMPay> PayDelete(object payload)
+        //{
+        //    return await client.DeleteAsync<SMPay>("pay", payload);
+        //}
     }
 }

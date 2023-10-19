@@ -1,9 +1,8 @@
-﻿using Client.Classes;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 
-namespace Safemoney_UnitTest1_NET8.Classes
+namespace Client.Classes
 {
     public class HTTPClient
     {

@@ -1,4 +1,4 @@
-using Safemoney_UnitTest1_NET8.Classes;
+using Client.Classes;
 
 namespace UnitTestSafemoney
 {
