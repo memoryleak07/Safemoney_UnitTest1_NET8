@@ -1,0 +1,17 @@
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\bin\Debug\net8.0\Client.exe
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\bin\Debug\net8.0\Client.deps.json
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\bin\Debug\net8.0\Client.runtimeconfig.json
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\bin\Debug\net8.0\Client.dll
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\bin\Debug\net8.0\Client.pdb
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\Client.csproj.AssemblyReference.cache
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\Client.AssemblyInfoInputs.cache
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\Client.AssemblyInfo.cs
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\Client.csproj.CoreCompileInputs.cache
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\Client.csproj.CopyComplete
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\Client.dll
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\refint\Client.dll
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\Client.pdb
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\Client.genruntimeconfig.cache
+C:\repo\WORK\Safemoney_UnitTest1_NET8\Safemoney_UnitTest1_NET8\obj\Debug\net8.0\ref\Client.dll
