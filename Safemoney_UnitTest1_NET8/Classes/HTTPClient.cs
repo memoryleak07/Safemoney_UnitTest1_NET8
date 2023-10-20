@@ -1,9 +1,6 @@
-﻿using System.Net.Http;
-using System;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
-using System.Reflection.Metadata;
 
 namespace Client.Classes
 {
@@ -21,22 +18,22 @@ namespace Client.Classes
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authValue);
         }
-        public async Task<HttpResponseMessage> GetAsync<T>(string endpoint)
+        public async Task<HttpResponseMessage> GetAsync(string endpoint)
         {
             url = url + endpoint;
             return await client.GetAsync(url);
         }
-        public async Task<HttpResponseMessage> PostAsJsonAsync<T>(string endpoint, object? payload = null)
+        public async Task<HttpResponseMessage> PostAsJsonAsync(string endpoint, object? payload = null)
         {
             url = url + endpoint;
             return await client.PostAsJsonAsync(url, payload);
         }
-        public async Task<HttpResponseMessage> PutAsJsonAsync<T>(string endpoint, object? payload = null)
+        public async Task<HttpResponseMessage> PutAsJsonAsync(string endpoint, object? payload = null)
         {
             url = url + endpoint;
             return await client.PutAsJsonAsync(url, payload);
         }
-        public async Task<HttpResponseMessage> DeleteAsJsonAsync<T>(string endpoint, object? payload = null)
+        public async Task<HttpResponseMessage> DeleteAsJsonAsync(string endpoint, object? payload = null)
         {
             url = url + endpoint;
             var request = BuildRequestFromObject(HttpMethod.Delete, url, payload);

@@ -1,5 +1,5 @@
 ﻿using Client.Models;
-using System.Text;
+
 namespace Client.Classes
 {
     public class RestClient
@@ -19,30 +19,30 @@ namespace Client.Classes
         {
             client = new HTTPClient(address, port, username, password);
         }
-        public async Task<SMBase> Reboot()
+        public async Task<SMResponse<SMBase>> Reboot()
         {
-            var res = await client.PutAsJsonAsync<SMBase>("reboot");
-            return await ResponseManager.ReadResponse<SMBase>(res);
+            HttpResponseMessage? res = await client.PutAsJsonAsync("reboot");
+            return await ResponseManager.ReadResponseAsync<SMBase>(res);
         }
-        public async Task<SMBase> PowerOff()
+        public async Task<SMResponse<SMBase>> PowerOff()
         {
-            var res = await client.PutAsJsonAsync<SMBase>("poweroff");
-            return await ResponseManager.ReadResponse<SMBase>(res);
+            HttpResponseMessage? res = await client.PutAsJsonAsync("poweroff");
+            return await ResponseManager.ReadResponseAsync<SMBase>(res);
         }
-        public async Task<SMPayCreated> Pay(object payload)
+        public async Task<SMResponse<SMPayCreated>> Pay(object payload)
         {
-            var res = await client.PostAsJsonAsync<dynamic>("pay", payload);
-            return await ResponseManager.ReadResponse<SMPayCreated>(res);
+            HttpResponseMessage? res = await client.PostAsJsonAsync("pay", payload);
+            return await ResponseManager.ReadResponseAsync<SMPayCreated>(res);
         }
-        public async Task<SMPay> PayBegin(object payload)
+        public async Task<SMResponse<SMPay>> PayBegin(object payload)
         {
-            var res = await client.PostAsJsonAsync<dynamic>("beginPayment", payload);
-            return await ResponseManager.ReadResponse<SMPay>(res);
+            var res = await client.PostAsJsonAsync("beginPayment", payload);
+            return await ResponseManager.ReadResponseAsync<SMPay>(res);
         }
-        public async Task<SMPay> PayDelete(object? payload)
+        public async Task<SMResponse<SMPay>> PayDelete(object? payload)
         {
-            var res = await client.DeleteAsJsonAsync<dynamic>("pay", payload);
-            return await ResponseManager.ReadResponse<SMPay>(res);
+            var res = await client.DeleteAsJsonAsync("pay", payload);
+            return await ResponseManager.ReadResponseAsync<SMPay>(res);
         }
     }
 }
