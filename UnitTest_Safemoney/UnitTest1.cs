@@ -1,65 +1,50 @@
 using Client.Classes;
+using Client.Models;
 
 namespace UnitTestSafemoney
 {
     [TestClass]
     public class UnitTest1
     {
-        public HTTPClient client;
+        private static string token;
+        private static RestClient rest;
 
         [TestInitialize]
         public void TestInitialize() // Initialize the RestClient and set AssistMode = false
         {
-            //client = new RestClient("192.168.34.213", "7409", "pin", "0000");
-            client = new HTTPClient("https://httpbin.org/");
+            rest = new RestClient("192.168.34.212", "7409", "pin", "0000");
         }
         [TestMethod]
-        public async Task TestGetAsync()
-        {
-            var res = await client.GetAsync<dynamic>("get");
-        }
-        [TestMethod]
-        public async Task TestPostAsJsonAsync()
+        public async Task Test1_CreatePay()
         {
             var payload = new
             {
-                toBePaid = 5.70,
+                toBePaid = 5.10,
                 description = "Cassa 1 - REP. PARAFARMACIA"
             };
-            var res = await client.PostAsJsonAsync<dynamic>("post", payload);
-            Console.WriteLine(res);
+            SMPayCreated res = await rest.Pay(payload);
+            Assert.AreEqual(SMTransactionStatus.CREATED, res.TransactionStatus);
+            token = res.Token; // Save the token
         }
         [TestMethod]
-        public async Task TestDeleteAsync()
+        public async Task Test2_BeginPay()
         {
-            var res = await client.DeleteAsync<dynamic>("delete");
-            Console.WriteLine(res);
+            var payload = new
+            {
+                token = token,
+            };
+            SMPay res = await rest.PayBegin(payload);
+            Assert.AreEqual(SMTransactionStatus.CASH_IN, res.TransactionStatus);
         }
         [TestMethod]
-        public async Task TestPutAsJsonAsync()
+        public async Task Test2_DeletePay()
         {
-            var res = await client.PutAsJsonAsync<dynamic>("put"); // Or pass object as payload
-            Console.WriteLine(res);
+            var payload = new
+            {
+                token = token,
+            };
+            SMPay res = await rest.PayDelete(payload);
+            Assert.AreEqual(SMTransactionStatus.ABORTED, res.TransactionStatus);
         }
-        //[TestMethod]
-        //public async Task TestMethodPostAsync()
-        //{
-        //    // Create an object with the desired structure
-        //    var data = new
-        //    {
-        //        toBePaid = 5.70,
-        //        description = "Cassa 1 - REP. PARAFARMACIA"
-        //    };
-
-        //    // Serialize the object to JSON
-        //    string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
-
-        //    // Create a StringContent with the JSON data
-        //    var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-        //    // Make the POST request with the content
-        //    dynamic res = await client.PostAsync<dynamic>("pay", content);
-        //    Console.WriteLine(res.ToString());
-        //}
     }
 }

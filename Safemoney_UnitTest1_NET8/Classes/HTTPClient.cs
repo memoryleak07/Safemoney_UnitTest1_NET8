@@ -1,6 +1,9 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Net.Http;
+using System;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
+using System.Reflection.Metadata;
 
 namespace Client.Classes
 {
@@ -18,35 +21,40 @@ namespace Client.Classes
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authValue);
         }
-        public async Task<T> GetAsync<T>(string endpoint)
+        public async Task<HttpResponseMessage> GetAsync<T>(string endpoint)
         {
             url = url + endpoint;
-            HttpResponseMessage response = await client.GetAsync(url);
-            return await ResponseManager.ReadResponse<T>(response);
+            return await client.GetAsync(url);
         }
-        public async Task<T> PostAsJsonAsync<T>(string endpoint, object? payload = null)
+        public async Task<HttpResponseMessage> PostAsJsonAsync<T>(string endpoint, object? payload = null)
         {
             url = url + endpoint;
-            HttpResponseMessage response = await client.PostAsJsonAsync(url, payload);
-            return await ResponseManager.ReadResponse<T>(response);
+            return await client.PostAsJsonAsync(url, payload);
         }
-        public async Task<T> PutAsJsonAsync<T>(string endpoint, object? payload = null)
+        public async Task<HttpResponseMessage> PutAsJsonAsync<T>(string endpoint, object? payload = null)
         {
             url = url + endpoint;
-            HttpResponseMessage response = await client.PutAsJsonAsync(url, payload);
-            return await ResponseManager.ReadResponse<T>(response);
+            return await client.PutAsJsonAsync(url, payload);
         }
-        public async Task<T> DeleteAsync<T>(string endpoint)
+        public async Task<HttpResponseMessage> DeleteAsJsonAsync<T>(string endpoint, object? payload = null)
         {
             url = url + endpoint;
-            HttpResponseMessage response = await client.DeleteAsync(url);
-            return await ResponseManager.ReadResponse<T>(response);
+            var request = BuildRequestFromObject(HttpMethod.Delete, url, payload);
+            return await client.SendAsync(request);
         }
-        //public async Task<T> DeleteAsync<T>(string endpoint)
-        //{
-        //    url = url + endpoint;
-        //    HttpResponseMessage response = await client.DeleteAsync(url);
-        //    return await ResponseManager.ReadResponse<T>(response);
-        //}
+        private HttpRequestMessage BuildRequestFromObject(HttpMethod method, string url, object payload)
+        {
+            // Serialize the payload to JSON
+            string jsonPayload = JsonConvert.SerializeObject(payload);
+
+            // Create StringContent with JSON payload and set the content type
+            var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+            // Create an HttpRequestMessage with the method, URL, and content
+            var request = new HttpRequestMessage(method, url);
+            request.Content = content;
+
+            return request;
+        }
     }
 }
