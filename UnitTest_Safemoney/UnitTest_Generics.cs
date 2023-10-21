@@ -1,6 +1,4 @@
 ﻿using Client.Classes;
-using System.Net.Http.Headers;
-using System.Text;
 
 namespace UnitTestSafemoney
 {
@@ -17,32 +15,54 @@ namespace UnitTestSafemoney
         [TestMethod]
         public async Task Test1_TestGetAsync()
         {
-            var res = await client.GetAsync("get");
+            var res = await client.HttpClient.GetAsync("get");
             Assert.AreEqual(200, (int)res.StatusCode);
         }
         [TestMethod]
         public async Task Test2_TestPostAsync()
         {
-            var res = await client.PostAsync("post", null);
+            var res = await client.HttpClient.PostAsync("post", null);
             Assert.AreEqual(200, (int)res.StatusCode);
         }
         [TestMethod]
         public async Task Test3_TestBasicAuth()
         {
+            string url = "https://httpbin.org/basic-auth/foo/bar";
+            string port = string.Empty;
             string username = "foo";
             string password = "bar";
-            string url = "https://httpbin.org/basic-auth/foo/bar";
-
-            // Create the Authorization header and set it directly on the HttpClient headers
-            string authValue = Convert.ToBase64String(Encoding.ASCII.GetBytes($"{username}:{password}"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authValue);
-
-            // Set the default Accept header if needed
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            var authorizationHeader = client.DefaultRequestHeaders.Authorization;
-
-            Console.WriteLine(authorizationHeader);
-            var res = await client.GetAsync(url);
+            // Init client add Basic Auth 
+            client = new RestClient(url, port, username, password);
+            var res = await client.HttpClient.GetAsync(url);
+            Assert.AreEqual(200, (int)res.StatusCode);
+        }
+        [TestMethod]
+        public async Task Test4_TestMyGetMethod()
+        {
+            var res = await client.MyGetMethod1();
+            Assert.AreEqual(200, (int)res.StatusCode);
+        }
+        [TestMethod]
+        public async Task Test5_TestMyPostMethod()
+        {
+            var payload = new
+            {
+                k1 = "uno",
+                k2 = "due"
+            };
+            var res = await client.MyPostMethod1(payload);
+            Assert.AreEqual(200, (int)res.StatusCode);
+        }
+        [TestMethod]
+        public async Task Test6_TestMyPutMethod()
+        {
+            var res = await client.MyPutMethod1();
+            Assert.AreEqual(200, (int)res.StatusCode);
+        }
+        [TestMethod]
+        public async Task Test7_TestMyDeleteMethod()
+        {
+            var res = await client.MyDeleteMethod1();
             Assert.AreEqual(200, (int)res.StatusCode);
         }
     }
