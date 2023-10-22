@@ -2,7 +2,7 @@
 
 namespace Client.Classes
 {
-    public class ResponseManager
+    public class HttpResponseManager
     {
         public static async Task<SMResponse<T>> ReadResponseAsync<T>(HttpResponseMessage response)
         {

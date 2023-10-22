@@ -1,6 +1,4 @@
-﻿using Client.Classes;
-
-namespace UnitTestSafemoney
+﻿namespace UnitTestSafemoney
 {
     [TestClass]
     public class UnitTest_Generics
@@ -28,18 +26,17 @@ namespace UnitTestSafemoney
         public async Task Test3_TestBasicAuth()
         {
             string url = "https://httpbin.org/basic-auth/foo/bar";
-            string port = string.Empty;
             string username = "foo";
             string password = "bar";
             // Init client add Basic Auth 
-            client = new RestClient(url, port, username, password);
+            client = new RestClient(url, username, password);
             var res = await client.HttpClient.GetAsync(url);
             Assert.AreEqual(200, (int)res.StatusCode);
         }
         [TestMethod]
         public async Task Test4_TestMyGetMethod()
         {
-            var res = await client.MyGetMethod1();
+            var res = await client.RequestManager.MyGetMethodAsync();
             Assert.AreEqual(200, (int)res.StatusCode);
         }
         [TestMethod]
@@ -50,19 +47,19 @@ namespace UnitTestSafemoney
                 k1 = "uno",
                 k2 = "due"
             };
-            var res = await client.MyPostMethod1(payload);
+            var res = await client.RequestManager.MyPostMethodAsync(payload);
             Assert.AreEqual(200, (int)res.StatusCode);
         }
         [TestMethod]
         public async Task Test6_TestMyPutMethod()
         {
-            var res = await client.MyPutMethod1();
+            var res = await client.RequestManager.MyPutMethodAsync();
             Assert.AreEqual(200, (int)res.StatusCode);
         }
         [TestMethod]
         public async Task Test7_TestMyDeleteMethod()
         {
-            var res = await client.MyDeleteMethod1();
+            var res = await client.RequestManager.MyDeleteMethodAsync();
             Assert.AreEqual(200, (int)res.StatusCode);
         }
     }

@@ -1,4 +1,3 @@
-using Client.Classes;
 using Client.Models;
 
 namespace UnitTestSafemoney
@@ -7,12 +6,12 @@ namespace UnitTestSafemoney
     public class UnitTest_Payments
     {
         private static string token;
-        private static RestClient rest;
+        private static RestClient client;
 
         [TestInitialize]
         public void TestInitialize() // Initialize the RestClient
         {
-            rest = new RestClient("192.168.34.212", "7409", "pin", "0000");
+            client = new RestClient("http", "192.168.34.212", 7409, "pin", "0000");
         }
         [TestMethod]
         public async Task Test1_CreatePay()
@@ -22,7 +21,7 @@ namespace UnitTestSafemoney
                 toBePaid = 5.10,
                 description = "Cassa 1 - REP. PARAFARMACIA"
             };
-            var res = await rest.Pay(payload);
+            var res = await client.RequestManager.Pay(payload);
             Assert.AreEqual(SMTransactionStatus.CREATED, res.Content.TransactionStatus);
             token = res.Content.Token; // Save the token
         }
@@ -33,7 +32,7 @@ namespace UnitTestSafemoney
             {
                 token = token,
             };
-            var res = await rest.PayBegin(payload);
+            var res = await client.RequestManager.PayBegin(payload);
             Assert.AreEqual(SMTransactionStatus.CASH_IN, res.Content.TransactionStatus);
         }
         [TestMethod]
@@ -43,7 +42,7 @@ namespace UnitTestSafemoney
             {
                 token = token,
             };
-            var res = await rest.PayDelete(payload);
+            var res = await client.RequestManager.PayDelete(payload);
             Assert.AreEqual(SMTransactionStatus.ABORTED, res.Content.TransactionStatus);
         }
         [TestMethod]
@@ -53,7 +52,7 @@ namespace UnitTestSafemoney
             {
                 token = token,
             };
-            var res = await rest.PayBegin(payload);
+            var res = await client.RequestManager.PayBegin(payload);
             Assert.AreEqual(400, res.Error.Code); // 400 Bad Request is expected
         }
     }

@@ -5,6 +5,20 @@ namespace Client.Classes
 {
     public class HttpUtility
     {
+        public static Uri BuildUrl(string? scheme, string baseAddress, int? port = null)
+        {
+            var urlBuilder = new UriBuilder()
+            {
+                Scheme = scheme,
+                Host = baseAddress,
+            };
+            if (port.HasValue)
+            {
+                urlBuilder.Port = port.Value;
+            }
+
+            return urlBuilder.Uri;
+        }
         public static void AddHttpRequestHeaders(HttpClient client, string username, string password)
         {
             // Create the Authorization header and set it directly on the HttpClient headers
