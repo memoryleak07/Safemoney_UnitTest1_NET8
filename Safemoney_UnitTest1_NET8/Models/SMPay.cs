@@ -1,4 +1,6 @@
-﻿namespace Client.Models
+﻿using Client.Models.SMEnum;
+
+namespace Client.Models
 {
     public class SMPay : SMBase
     {
@@ -18,6 +20,6 @@
         public double ToBePaid { get; set; }
 
         [JsonProperty("transactionStatus")]
-        public SMTransactionStatus TransactionStatus { get; set; }
+        public ETransactionStatus TransactionStatus { get; set; }
     }
 }

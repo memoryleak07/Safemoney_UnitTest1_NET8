@@ -7,7 +7,7 @@ namespace Client.Classes
     {
         public static Uri BuildUrl(string? scheme, string baseAddress, int? port = null)
         {
-            var urlBuilder = new UriBuilder()
+            UriBuilder urlBuilder = new UriBuilder()
             {
                 Scheme = scheme,
                 Host = baseAddress,

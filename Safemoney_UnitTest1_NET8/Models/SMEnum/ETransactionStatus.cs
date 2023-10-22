@@ -1,6 +1,6 @@
-﻿namespace Client.Models
+﻿namespace Client.Models.SMEnum
 {
-    public enum SMTransactionStatus
+    public enum ETransactionStatus
     {
         CREATED,
         CASH_IN,

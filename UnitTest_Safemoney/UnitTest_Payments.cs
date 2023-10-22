@@ -1,4 +1,4 @@
-using Client.Models;
+using Client.Models.SMEnum;
 
 namespace UnitTestSafemoney
 {
@@ -22,7 +22,7 @@ namespace UnitTestSafemoney
                 description = "Cassa 1 - REP. PARAFARMACIA"
             };
             var res = await client.RequestManager.Pay(payload);
-            Assert.AreEqual(SMTransactionStatus.CREATED, res.Content.TransactionStatus);
+            Assert.AreEqual(ETransactionStatus.CREATED, res.Content.TransactionStatus);
             token = res.Content.Token; // Save the token
         }
         [TestMethod]
@@ -33,7 +33,7 @@ namespace UnitTestSafemoney
                 token = token,
             };
             var res = await client.RequestManager.PayBegin(payload);
-            Assert.AreEqual(SMTransactionStatus.CASH_IN, res.Content.TransactionStatus);
+            Assert.AreEqual(ETransactionStatus.CASH_IN, res.Content.TransactionStatus);
         }
         [TestMethod]
         public async Task Test3_DeletePay()
@@ -43,7 +43,7 @@ namespace UnitTestSafemoney
                 token = token,
             };
             var res = await client.RequestManager.PayDelete(payload);
-            Assert.AreEqual(SMTransactionStatus.ABORTED, res.Content.TransactionStatus);
+            Assert.AreEqual(ETransactionStatus.ABORTED, res.Content.TransactionStatus);
         }
         [TestMethod]
         public async Task Test4_SendAbortedToken()

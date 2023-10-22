@@ -1,0 +1,31 @@
+{
+  "currency": "EUR",
+  "totalDispensed": 0,
+  "totalNotDispensed": 45,
+  "withdrawals": [
+    {
+      "dispensed": 0,
+      "notDispensed": 5,
+      "denomination": 1,
+      "deviceType": "COIN",
+      "quantity": 5
+    },
+    {
+      "dispensed": 0,
+      "notDispensed": 2,
+      "denomination": 5,
+      "deviceType": "NOTE",
+      "quantity": 2
+    },
+    {
+      "dispensed": 0,
+      "notDispensed": 3,
+      "denomination": 10,
+      "deviceType": "NOTE",
+      "quantity": 3
+    }
+  ],
+  "transactionStatus": "TERMINATED",
+  "resCode": 0,
+  "resDescription": "Success"
+}

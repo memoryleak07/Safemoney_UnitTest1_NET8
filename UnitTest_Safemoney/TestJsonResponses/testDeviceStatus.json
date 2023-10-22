@@ -1,0 +1,108 @@
+{
+  "deviceStatus": "OFFLINE",
+  "statusInfo": [
+    {
+      "data": {
+        "UID": "NA_POWER",
+        "Code": "POWER",
+        "Status": "OK",
+        "InError": false,
+        "Type": 3
+      },
+      "statusCode": "NA_POWER_OK"
+    },
+    {
+      "data": {
+        "UID": "NA_FRONT_DOOR",
+        "Code": "FRONT_DOOR",
+        "Status": "CLOSED",
+        "InError": false,
+        "Type": 3
+      },
+      "statusCode": "NA_FRONT_DOOR_CLOSED"
+    },
+    {
+      "data": {
+        "UID": "NA_CASHBOX",
+        "Code": "CASHBOX",
+        "Status": "CLOSED",
+        "InError": false,
+        "Type": 3
+      },
+      "statusCode": "NA_CASHBOX_CLOSED"
+    },
+    {
+      "data": {
+        "UID": "NOTE_DEPOSIT",
+        "Code": "DEPOSIT",
+        "Status": "OK",
+        "InError": false,
+        "Type": 2
+      },
+      "statusCode": "NOTE_DEPOSIT_OK"
+    },
+    {
+      "data": {
+        "UID": "NOTE_DISPENSE",
+        "Code": "DISPENSE",
+        "Status": "OK",
+        "InError": false,
+        "Type": 2
+      },
+      "statusCode": "NOTE_DISPENSE_OK"
+    },
+    {
+      "data": {
+        "UID": "NOTE_RECYCLE",
+        "Code": "RECYCLE",
+        "Status": "OK",
+        "InError": false,
+        "Type": 2
+      },
+      "statusCode": "NOTE_RECYCLE_OK"
+    },
+    {
+      "data": {
+        "UID": "NOTE_SAFEDOOR_STATUS",
+        "Code": "SAFEDOOR_STATUS",
+        "Status": "LOCKED",
+        "InError": false,
+        "Type": 2
+      },
+      "statusCode": "NOTE_SAFEDOOR_STATUS_LOCKED"
+    },
+    {
+      "data": {
+        "UID": "NOTE_HARDWARE_STATUS",
+        "Code": "HARDWARE_STATUS",
+        "Status": "OK",
+        "InError": false,
+        "Type": 2
+      },
+      "statusCode": "NOTE_HARDWARE_STATUS_OK"
+    },
+    {
+      "data": {
+        "UID": "NOTE_WRONGCONFIGURATION_COVERSOPEN_CASHBOXFULL",
+        "Code": "WRONGCONFIGURATION_COVERSOPEN_CASHBOXFULL",
+        "Status": "OK",
+        "InError": false,
+        "Type": 2
+      },
+      "statusCode": "NOTE_WRONGCONFIGURATION_COVERSOPEN_CASHBOXFULL_OK"
+    },
+    {
+      "data": {
+        "UID": "COIN_NOTOPENED",
+        "Code": "NOTOPENED",
+        "Status": "ERROR",
+        "InError": true,
+        "Type": 1
+      },
+      "statusCode": "COIN_NOTOPENED_ERROR"
+    }
+  ],
+  "totalCount": 10,
+  "resCode": 0,
+  "resDescription": "Success"
+}

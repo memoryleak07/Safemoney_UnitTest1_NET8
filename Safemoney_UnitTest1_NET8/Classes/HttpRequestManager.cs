@@ -30,7 +30,7 @@ namespace Client.Classes
         public async Task<SMResponse<SMPay>> PayDelete(object payload)
         {
             HttpRequestMessage request = HttpUtility.BuildRequestMessageFromObject(HttpMethod.Delete, "pay", payload);
-            var res = await client.SendAsync(request);
+            HttpResponseMessage res = await client.SendAsync(request);
             return await HttpResponseManager.ReadResponseAsync<SMPay>(res);
         }
         // Home test only

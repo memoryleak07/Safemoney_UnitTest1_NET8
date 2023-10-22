@@ -1,0 +1,297 @@
+{
+  "totalCount": 29,
+  "transactionsLog": [
+    {
+      "Id": "625543f66021fa02daaa1c76",
+      "TransactionCode": "PAY",
+      "Token": "c9d8c2f0-c6ce-4fa3-a0a1-e33b542f9108",
+      "Date": "2022-04-12T11:12:53.399+02:00",
+      "TotalRequest": 0.05,
+      "Paid": 0.05,
+      "Dispensed": 0,
+      "NotDispensed": 0,
+      "TransactionStatus": "TERMINATED",
+      "ResCode": 0,
+      "ResDescription": "Success",
+      "Total": 0.05,
+      "Description": "Cassa 1 - REP. PARAFARMACIA",
+      "Levels": null,
+      "User": null
+    },
+    {
+      "Id": "625543f66021fa02daaa1c77",
+      "TransactionCode": "WITHDRAWAL",
+      "Token": null,
+      "Date": "2022-04-11T17:08:49.438+02:00",
+      "TotalRequest": 40,
+      "Paid": 0,
+      "Dispensed": 0.4,
+      "NotDispensed": 0,
+      "TransactionStatus": "TERMINATED",
+      "ResCode": 0,
+      "ResDescription": "Success",
+      "Total": -0.4,
+      "Description": "",
+      "Levels": null,
+      "User": "driver"
+    },
+    {
+      "Id": "625543f66021fa02daaa1c78",
+      "TransactionCode": "WITHDRAWAL",
+      "Token": null,
+      "Date": "2022-04-11T17:08:20.11+02:00",
+      "TotalRequest": 190,
+      "Paid": 0,
+      "Dispensed": 1.9,
+      "NotDispensed": 0,
+      "TransactionStatus": "TERMINATED",
+      "ResCode": 0,
+      "ResDescription": "Success",
+      "Total": -1.9,
+      "Description": "",
+      "Levels": null,
+      "User": "driver"
+    },
+    {
+      "Id": "625543f66021fa02daaa1c79",
+      "TransactionCode": "WITHDRAWAL",
+      "Token": null,
+      "Date": "2022-04-11T17:07:49.987+02:00",
+      "TotalRequest": 400,
+      "Paid": 0,
+      "Dispensed": 4,
+      "NotDispensed": 0,
+      "TransactionStatus": "TERMINATED",
+      "ResCode": 0,
+      "ResDescription": "Success",
+      "Total": -4,
+      "Description": "",
+      "Levels": null,
+      "User": "driver"
+    },
+    {
+      "Id": "625543f66021fa02daaa1c7a",
+      "TransactionCode": "WITHDRAWAL",
+      "Token": null,
+      "Date": "2022-04-11T17:07:28.871+02:00",
+      "TotalRequest": 950,
+      "Paid": 0,
+      "Dispensed": 9.5,
+      "NotDispensed": 0,
+      "TransactionStatus": "TERMINATED",
+      "ResCode": 0,
+      "ResDescription": "Success",
+      "Total": -9.5,
+      "Description": "",
+      "Levels": null,
+      "User": "driver"
+    },
+    {
+      "Id": "625543f66021fa02daaa1c7b",
+      "TransactionCode": "WITHDRAWAL",
+      "Token": null,
+      "Date": "2022-04-11T17:06:57.627+02:00",
+      "TotalRequest": 1800,
+      "Paid": 0,
+      "Dispensed": 18,
+      "NotDispensed": 0,
+      "TransactionStatus": "TERMINATED",
+      "ResCode": 0,
+      "ResDescription": "Success",
+      "Total": -18,
+      "Description": "",
+      "Levels": null,
+      "User": "driver"
+    },
+    {
+      "Id": "625543f66021fa02daaa1c7c",
+      "TransactionCode": "WITHDRAWAL",
+      "Token": null,
+      "Date": "2022-04-11T17:06:37.603+02:00",
+      "TotalRequest": 0,
+      "Paid": 0,
+      "Dispensed": 0,
+      "NotDispensed": 0,
+      "TransactionStatus": "TERMINATED",
+      "ResCode": 0,
+      "ResDescription": "Success",
+      "Total": 0,
+      "Description": "",
+      "Levels": null,
+      "User": "driver"
+    },
+    {
+      "Id": "625543f66021fa02daaa1c7d",
+      "TransactionCode": "WITHDRAWAL",
+      "Token": null,
+      "Date": "2022-04-11T17:06:31.815+02:00",
+      "TotalRequest": 200,
+      "Paid": 0,
+      "Dispensed": 2,
+      "NotDispensed": 0,
+      "TransactionStatus": "TERMINATED",
+      "ResCode": 0,
+      "ResDescription": "Success",
+      "Total": -2,
+      "Description": "",
+      "Levels": null,
+      "User": "driver"
+    },
+    {
+      "Id": "625543f66021fa02daaa1c7e",
+      "TransactionCode": "WITHDRAWAL",
+      "Token": null,
+      "Date": "2022-04-11T17:06:13.274+02:00",
+      "TotalRequest": 4200,
+      "Paid": 0,
+      "Dispensed": 42,
+      "NotDispensed": 0,
+      "TransactionStatus": "TERMINATED",
+      "ResCode": 0,
+      "ResDescription": "Success",
+      "Total": -42,
+      "Description": "",
+      "Levels": null,
+      "User": "driver"
+    },
+    {
+      "Id": "625543f66021fa02daaa1c7f",
+      "TransactionCode": "EMPTY_CASH_TOTAL_SET",
+      "Token": null,
+      "Date": "2022-04-11T15:12:22.707+02:00",
+      "TotalRequest": 0,
+      "Paid": 0,
+      "Dispensed": 70,
+      "NotDispensed": 0,
+      "TransactionStatus": null,
+      "ResCode": 0,
+      "ResDescription": "Success",
+      "Total": -70,
+      "Description": "",
+      "Levels": {
+        "currency": "EUR",
+        "coins": {
+          "denominations": [
+            {
+              "delta": 0,
+              "denomination": 0.01,
+              "deviceType": "COIN",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 0.02,
+              "deviceType": "COIN",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 0.05,
+              "deviceType": "COIN",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 0.1,
+              "deviceType": "COIN",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 0.2,
+              "deviceType": "COIN",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 0.5,
+              "deviceType": "COIN",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 1,
+              "deviceType": "COIN",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 2,
+              "deviceType": "COIN",
+              "reLevel": 0,
+              "total": 0
+            }
+          ],
+          "total": 0
+        },
+        "notes": {
+          "denominations": [
+            {
+              "delta": 0,
+              "denomination": 5,
+              "deviceType": "NOTE",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 10,
+              "deviceType": "NOTE",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 20,
+              "deviceType": "NOTE",
+              "reLevel": 1,
+              "total": 20
+            },
+            {
+              "delta": 0,
+              "denomination": 50,
+              "deviceType": "NOTE",
+              "reLevel": 1,
+              "total": 50
+            },
+            {
+              "delta": 0,
+              "denomination": 100,
+              "deviceType": "NOTE",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 200,
+              "deviceType": "NOTE",
+              "reLevel": 0,
+              "total": 0
+            },
+            {
+              "delta": 0,
+              "denomination": 500,
+              "deviceType": "NOTE",
+              "reLevel": 0,
+              "total": 0
+            }
+          ],
+          "total": 70
+        },
+        "total": 70,
+        "resCode": 0,
+        "resDescription": "Success"
+      },
+      "User": null
+    }
+  ],
+  "resCode": 0,
+  "resDescription": "Success"
+}
