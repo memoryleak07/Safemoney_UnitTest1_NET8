@@ -32,7 +32,7 @@ namespace UnitTestSafemoney.TestJsonResponses
         [TestMethod]
         public async Task Test3_CheckFirstWwithdrawalsDenomination()
         {
-            Assert.AreEqual(1, res.Withdrawals[0].Denomination);
+            Assert.AreEqual(EurDenomination.Eur_02, res.Withdrawals[0].Denomination);
         }
         [TestMethod]
         public async Task Test4_CheckFirstWwithdrawalsDeviceType()
@@ -48,7 +48,7 @@ namespace UnitTestSafemoney.TestJsonResponses
         public async Task Test6_PostCashWithdrawLevel()
         {
             // Post Withdraw
-            SMDenominations cashList = new(EDeviceType.COIN, 1, 5);
+            SMDenominations cashList = new(EDeviceType.COIN, EurDenomination.Eur_10, 5);
             RestClient client = new RestClient("https://httpbin.org/");
             HttpRequestMessage request = HttpUtility.BuildRequestMessageFromObject(HttpMethod.Post, "post", cashList);
             var response = await client.HttpClient.SendAsync(request);

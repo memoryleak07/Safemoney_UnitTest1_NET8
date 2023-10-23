@@ -20,9 +20,9 @@
     }
     public class EDenomination
     {
-        public static decimal ToDecimal(EurDenomination denomination)
+        public static double ToDouble(EurDenomination denomination)
         {
-            return (decimal)denomination / 100;
+            return (double)denomination / 100;
         }
     }
 }

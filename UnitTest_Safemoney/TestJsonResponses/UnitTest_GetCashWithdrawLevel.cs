@@ -22,7 +22,7 @@ namespace UnitTestSafemoney.TestJsonResponses
         [TestMethod]
         public async Task Test1_CheckFirstDenomination()
         {
-            Assert.AreEqual(0.1, res.Withdrawals[0].Denomination);
+            Assert.AreEqual(EurDenomination.Eur_01, res.Withdrawals[0].Denomination);
         }
         [TestMethod]
         public async Task Test2_CheckFirstDeviceType()

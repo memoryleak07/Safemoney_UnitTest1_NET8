@@ -26,6 +26,16 @@ namespace UnitTestSafemoney
             Assert.AreEqual("eur", res.Content.Currency.ToLower());
         }
         [TestMethod]
+        public async Task Test2_CallGetInventory()
+        {
+            //double oneCent = Convert.ToDouble(EurDenomination.Eur_01) / 100;
+            double oneCent = EDenomination.ToDouble(EurDenomination.Eur_01);
+
+            var res = await client.RequestManager.GetCashWithdrawLevel();
+            Assert.AreEqual("eur", res.Content.Currency.ToLower());
+        }
+
+        [TestMethod]
         public async Task Test1_CheckTotal()
         {
             // Create the SMCashLevel object with the desired cashList
@@ -33,14 +43,14 @@ namespace UnitTestSafemoney
             {
                 CashList = new List<SMDenominations>
                 {
-                    new SMDenominations(EDeviceType.NOTE, 10, 1)
+                    new SMDenominations(EDeviceType.NOTE, EurDenomination.Eur_50, 1)
                 }
             };
 
             var jsonPayload = JsonConvert.SerializeObject(cashLevel, Formatting.Indented, new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore,
-                Converters = { new StringEnumConverter() }
+                Converters = { new StringEnumConverter()/*, new EurDenominationConverter()*/ }
             });
 
             Console.WriteLine(jsonPayload);

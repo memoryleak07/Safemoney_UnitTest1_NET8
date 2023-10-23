@@ -6,7 +6,7 @@ namespace Client.Models
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class SMDenominations : SMBase
     {
-        public SMDenominations(EDeviceType deviceType, double denomination, int quantity)
+        public SMDenominations(EDeviceType deviceType, EurDenomination denomination, int quantity)
         {
             DeviceType = deviceType;
             Denomination = denomination;
@@ -26,7 +26,7 @@ namespace Client.Models
         public int? Delta { get; set; }
 
         [JsonProperty("denomination")]
-        public double? Denomination { get; set; }
+        public EurDenomination? Denomination { get; set; }
 
         [JsonProperty("deviceType")]
         public EDeviceType? DeviceType { get; set; }
