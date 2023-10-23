@@ -1,69 +1,70 @@
 ﻿using Client.Models;
 using Client.Models.SMEnum;
-using Newtonsoft.Json;
 
 namespace UnitTestSafemoney
 {
     [TestClass]
     public class UnitTest_Inventory
     {
-        private SMInventory res;
+        private static RestClient client;
+        private static SMResponse<SMInventory> res;
 
         [TestInitialize]
-        public void TestInitialize() 
+        public void TestInitialize() // Initialize the RestClient
         {
-            string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\.."));
-            string filePath = Path.Combine(projectDirectory, "TestJsonResponses", "testInventory.json");
-
-            var response = File.ReadAllText(filePath);
-            // Convert response in SMInventory
-            res = JsonConvert.DeserializeObject<SMInventory>(response);
+            client = new RestClient("http", "192.168.34.212", 7409, "pin", "0000");
+        }
+        [TestMethod]
+        public async Task Test1_CallGetInventory()
+        {
+            res = await client.RequestManager.GetInventoryAsync();
+            Assert.IsNotNull(res);
         }
         [TestMethod]
         public async Task Test1_CheckTotal()
         {
-            Assert.AreEqual(0, res.Total);
+            Assert.AreEqual(0, (int)res.Content.Total);
         }
         [TestMethod]
         public async Task Test2_CheckResCode()
         {
-            Assert.AreEqual(0, res.ResCode);
+            Assert.AreEqual(0, res.Content.ResCode);
         }
         [TestMethod]
         public async Task Test3_CheckResDescription()
         {
-            Assert.AreEqual("success", res.ResDescription.ToLower());
+            Assert.AreEqual("success", res.Content.ResDescription.ToLower());
         }
         [TestMethod]
         public async Task Test4_CheckFirstDenomination()
         {
-            Assert.AreEqual(0.01, (double)res.Coins.Denominations[0].Denomination);
+            Assert.AreEqual(0.01, (double)res.Content.Coins.Denominations[0].Denomination);
         }
         [TestMethod]
         public async Task Test5_CheckLastDenomination()
         {
-            Assert.AreEqual(200, (Int64)res.Notes.Denominations[5].Denomination);
+            Assert.AreEqual(200, (long)res.Content.Notes.Denominations[5].Denomination);
         }
         [TestMethod]
         public async Task Test6_CheckFirstDenominationRoute()
         {
-            Assert.AreEqual(ERoute.NONE, res.Coins.Denominations[0].Route);
+            Assert.AreEqual(ERoute.NONE, res.Content.Coins.Denominations[0].Route);
         }
         [TestMethod]
         public async Task Test7_CheckLastDenominationRoute()
         {
-            Assert.AreEqual(ERoute.DEPOSIT, res.Notes.Denominations[5].Route);
+            Assert.AreEqual(ERoute.DEPOSIT, res.Content.Notes.Denominations[5].Route);
         }
         // Check total for coin
         [TestMethod]
         public async Task Test8_CheckTotalsCoinsDenominations()
         {
-            Assert.AreEqual(0, res.Coins.Total);
+            Assert.AreEqual(0, res.Content.Coins.Total);
         }
         [TestMethod]
         public async Task Test9_CheckTotalsNotesDenomination()
         {
-            Assert.AreEqual(0, res.Notes.Total);
+            Assert.AreEqual(0, res.Content.Notes.Total);
         }
     }
 }

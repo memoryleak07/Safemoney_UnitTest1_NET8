@@ -1,0 +1,170 @@
+{
+  "currency": "EUR",
+  "coins": {
+    "denominations": [
+      {
+        "cbLevel": 0,
+        "delta": 0,
+        "denomination": 0.01,
+        "deviceType": "COIN",
+        "maxThreshold": 0,
+        "minThreshold": 0,
+        "reLevel": 0,
+        "route": "NONE",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": 0,
+        "denomination": 0.02,
+        "deviceType": "COIN",
+        "maxThreshold": 0,
+        "minThreshold": 0,
+        "reLevel": 0,
+        "route": "DEPOSIT",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": 0,
+        "denomination": 0.05,
+        "deviceType": "COIN",
+        "maxThreshold": 0,
+        "minThreshold": 0,
+        "reLevel": 0,
+        "route": "DEPOSIT",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": -5,
+        "denomination": 0.1,
+        "deviceType": "COIN",
+        "maxThreshold": 20,
+        "minThreshold": 5,
+        "reLevel": 0,
+        "route": "RECYCLE",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": -5,
+        "denomination": 0.2,
+        "deviceType": "COIN",
+        "maxThreshold": 20,
+        "minThreshold": 5,
+        "reLevel": 0,
+        "route": "RECYCLE",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": -5,
+        "denomination": 0.5,
+        "deviceType": "COIN",
+        "maxThreshold": 10,
+        "minThreshold": 5,
+        "reLevel": 0,
+        "route": "RECYCLE",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": -5,
+        "denomination": 1,
+        "deviceType": "COIN",
+        "maxThreshold": 10,
+        "minThreshold": 5,
+        "reLevel": 0,
+        "route": "RECYCLE",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": -5,
+        "denomination": 2,
+        "deviceType": "COIN",
+        "maxThreshold": 10,
+        "minThreshold": 5,
+        "reLevel": 0,
+        "route": "RECYCLE",
+        "total": 0
+      }
+    ],
+    "total": 0
+  },
+  "notes": {
+    "denominations": [
+      {
+        "cbLevel": 0,
+        "delta": -3,
+        "denomination": 5,
+        "deviceType": "NOTE",
+        "maxThreshold": 5,
+        "minThreshold": 3,
+        "reLevel": 0,
+        "route": "RECYCLE",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": -3,
+        "denomination": 10,
+        "deviceType": "NOTE",
+        "maxThreshold": 5,
+        "minThreshold": 3,
+        "reLevel": 0,
+        "route": "RECYCLE",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": -3,
+        "denomination": 20,
+        "deviceType": "NOTE",
+        "maxThreshold": 5,
+        "minThreshold": 3,
+        "reLevel": 0,
+        "route": "RECYCLE",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": -3,
+        "denomination": 50,
+        "deviceType": "NOTE",
+        "maxThreshold": 5,
+        "minThreshold": 3,
+        "reLevel": 0,
+        "route": "RECYCLE",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": 0,
+        "denomination": 100,
+        "deviceType": "NOTE",
+        "maxThreshold": 0,
+        "minThreshold": 0,
+        "reLevel": 0,
+        "route": "DEPOSIT",
+        "total": 0
+      },
+      {
+        "cbLevel": 0,
+        "delta": 0,
+        "denomination": 200,
+        "deviceType": "NOTE",
+        "maxThreshold": 0,
+        "minThreshold": 0,
+        "reLevel": 0,
+        "route": "DEPOSIT",
+        "total": 0
+      }
+    ],
+    "total": 0
+  },
+  "total": 0,
+  "resCode": 0,
+  "resDescription": "Success"
+}

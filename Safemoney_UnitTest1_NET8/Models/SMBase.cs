@@ -2,15 +2,15 @@
 
 namespace Client.Models
 {
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class SMBase
     {
-        [JsonProperty("currency", NullValueHandling = NullValueHandling.Ignore)]
-        public string Currency { get; set; }
+        public string? Currency { get; set; }
 
         [JsonProperty("resCode")]
-        public int ResCode { get; set; }
+        public int? ResCode { get; set; }
 
         [JsonProperty("resDescription")]
-        public string ResDescription { get; set; }
+        public string? ResDescription { get; set; }
     }
 }

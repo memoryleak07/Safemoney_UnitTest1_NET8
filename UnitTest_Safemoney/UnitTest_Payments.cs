@@ -28,6 +28,7 @@ namespace UnitTestSafemoney
         [TestMethod]
         public async Task Test2_BeginPay()
         {
+            Thread.Sleep(2000);
             var payload = new
             {
                 token = token,
@@ -38,6 +39,7 @@ namespace UnitTestSafemoney
         [TestMethod]
         public async Task Test3_DeletePay()
         {
+            Thread.Sleep(2000);
             var payload = new
             {
                 token = token,
@@ -48,6 +50,7 @@ namespace UnitTestSafemoney
         [TestMethod]
         public async Task Test4_SendAbortedToken()
         {
+            Thread.Sleep(2000);
             var payload = new
             {
                 token = token,

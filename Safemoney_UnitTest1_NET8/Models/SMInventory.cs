@@ -9,7 +9,7 @@
         public InventoryDeviceType Notes { get; set; }
 
         [JsonProperty("total")]
-        public int Total { get; set; }
+        public double Total { get; set; }
 
     }
 
@@ -19,6 +19,6 @@
         public List<SMDenominations> Denominations { get; set; }
 
         [JsonProperty("total")]
-        public int Total { get; set; }
+        public double Total { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 using Client.Models.SMEnum;
 using Newtonsoft.Json;
 
-namespace UnitTestSafemoney
+namespace UnitTestSafemoney.TestJsonResponses
 {
     [TestClass]
     public class UnitTest_DeviceStatus
