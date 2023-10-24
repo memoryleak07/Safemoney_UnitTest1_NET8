@@ -25,3 +25,7 @@ namespace Client.Classes
         }
     }
 }
+
+//https://stackoverflow.com/questions/56739903/is-it-possible-to-inject-ihttpclientfactory-to-a-strongly-typed-client
+//https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.2#typed-clients
+//https://learn.microsoft.com/it-it/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests
