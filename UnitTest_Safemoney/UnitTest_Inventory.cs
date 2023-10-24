@@ -1,5 +1,5 @@
-﻿using Client.Models;
-using Client.Models.SMEnum;
+﻿using Client.Models.SMEnum;
+using Client.Models.SMModels;
 
 namespace UnitTestSafemoney
 {

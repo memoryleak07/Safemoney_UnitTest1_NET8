@@ -1,4 +1,4 @@
-﻿using Client.Models;
+﻿using Client.Models.SMModels;
 using System.Net.Http.Json;
 
 namespace Client.Classes

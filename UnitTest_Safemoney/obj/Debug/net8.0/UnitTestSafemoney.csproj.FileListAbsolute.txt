@@ -1,0 +1,10 @@
+C:\repo\WORK\Safemoney_UnitTest1_NET8\UnitTest_Safemoney\bin\Debug\net8.0\CoverletSourceRootsMapping_UnitTestSafemoney
+C:\repo\WORK\Safemoney_UnitTest1_NET8\UnitTest_Safemoney\obj\Debug\net8.0\UnitTestSafemoney.csproj.AssemblyReference.cache
+C:\repo\WORK\Safemoney_UnitTest1_NET8\UnitTest_Safemoney\obj\Debug\net8.0\UnitTestSafemoney.GeneratedMSBuildEditorConfig.editorconfig
+C:\repo\WORK\Safemoney_UnitTest1_NET8\UnitTest_Safemoney\obj\Debug\net8.0\UnitTestSafemoney.AssemblyInfoInputs.cache
+C:\repo\WORK\Safemoney_UnitTest1_NET8\UnitTest_Safemoney\obj\Debug\net8.0\UnitTestSafemoney.AssemblyInfo.cs
+C:\repo\WORK\Safemoney_UnitTest1_NET8\UnitTest_Safemoney\obj\Debug\net8.0\UnitTestSafemoney.csproj.CoreCompileInputs.cache
+C:\repo\WORK\Safemoney_UnitTest1_NET8\UnitTest_Safemoney\obj\Debug\net8.0\UnitTestSafemoney.sourcelink.json
+C:\repo\WORK\Safemoney_UnitTest1_NET8\UnitTest_Safemoney\obj\Debug\net8.0\UnitTestSafemoney.dll
+C:\repo\WORK\Safemoney_UnitTest1_NET8\UnitTest_Safemoney\obj\Debug\net8.0\refint\UnitTestSafemoney.dll
+C:\repo\WORK\Safemoney_UnitTest1_NET8\UnitTest_Safemoney\obj\Debug\net8.0\UnitTestSafemoney.pdb
