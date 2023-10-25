@@ -20,7 +20,7 @@ namespace Client.Classes
 
         public SafemoneyController CreateSafemoneyController(string baseAddress)
         {
-            using HttpClient httpClient = _clientFactory.CreateClient(_clientName);
+            var httpClient = _clientFactory.CreateClient(_clientName);
 
             // Set the base address for the HttpClient
             httpClient.BaseAddress = new Uri(baseAddress);
