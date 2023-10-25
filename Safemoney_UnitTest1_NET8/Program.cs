@@ -1,4 +1,5 @@
 ﻿using Client.Classes;
+using Client.Models.SMModels;
 using Microsoft.Extensions.DependencyInjection;
 
 ServiceCollection services = new ();
@@ -17,11 +18,18 @@ using (var scope = servicesProvider.CreateScope())
     var initClient = scope.ServiceProvider.GetRequiredService<InitClient>();
 
     // Test
-    string baseAddress = "https://httpbin.org/";
+    string baseAddress = "http://192.168.34.212:7409/";
+    string username = "pin";
+    string password = "0000";
 
-    var client = initClient.CreateSafemoneyController(baseAddress);
+    var client = initClient.CreateSafemoneyController(baseAddress, username, password);
 
-    var response = await client.MyGetMethodAsync();
+    SMPay payload = new()
+    {
+        ToBePaid = 10,
+    };
 
-    Console.WriteLine(await response.Content.ReadAsStringAsync());
+    var response = await client.Pay(payload);
+
+    Console.WriteLine(response.Content.Token);
 }

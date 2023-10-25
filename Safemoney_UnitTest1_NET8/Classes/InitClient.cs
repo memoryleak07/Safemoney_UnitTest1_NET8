@@ -18,13 +18,15 @@ namespace Client.Classes
             _clientName = clientName;
         }
 
-        public SafemoneyController CreateSafemoneyController(string baseAddress)
+        public SafemoneyController CreateSafemoneyController(string baseAddress, string username, string password)
         {
-            var httpClient = _clientFactory.CreateClient(_clientName);
-
+            // Creates and configures an instance using the configuration that corresponds to the logical name specified
+            HttpClient httpClient = _clientFactory.CreateClient(_clientName);
             // Set the base address for the HttpClient
             httpClient.BaseAddress = new Uri(baseAddress);
-
+            // Add basic Baic Auth to httpClient RequestHeaders
+            HttpUtility.AddHttpRequestHeaders(httpClient, username, password);
+            // Return new instance of the Safemoney Controller
             return new SafemoneyController(httpClient);
         }
     }
