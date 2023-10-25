@@ -1,11 +1,13 @@
 ﻿using Client.Classes;
+using Client.Controllers;
 using Microsoft.Extensions.DependencyInjection;
+using System.Net.Http;
 
 ServiceCollection services = new ();
 IHttpClientBuilder httpClientBuilder = services.AddHttpClient("safemoney", httpClient => { });
 
-//  create the HttpClient using the IHttpClientFactory,
-//  the settings are encapsulated within the TestRestClient itself. 
+// Create the HttpClient using the IHttpClientFactory,
+// encapsulate settings within the TestRestClient itself.
 services.AddScoped<InitClient>(provider =>
 {
     var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
@@ -13,17 +15,16 @@ services.AddScoped<InitClient>(provider =>
 });
 
 var servicesProvider = services.BuildServiceProvider(validateScopes: true);
+
 using (var scope = servicesProvider.CreateScope())
 {
-    var client = scope.ServiceProvider.GetRequiredService<InitClient>();
+    var client = scope.ServiceProvider.GetRequiredService<SafemoneyController>();
 
     // Test
     string baseAddress = "https://httpbin.org/";
 
-    var smClient = client.CreateSafemoneyController(baseAddress);
 
-    var response = await smClient.PayDelete("/get");
+    var response = await client.Reboot();
 
     Console.WriteLine(response.Content.ToString());
-
 }

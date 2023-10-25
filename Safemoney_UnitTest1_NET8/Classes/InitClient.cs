@@ -1,8 +1,13 @@
 ﻿using Client.Controllers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Client.Classes
 {
-    public class InitClient
+    public class InitClient 
     {
         private readonly IHttpClientFactory _clientFactory;
         private readonly string _clientName;
@@ -22,7 +27,6 @@ namespace Client.Classes
 
             return new SafemoneyController(httpClient);
         }
-
     }
 }
 

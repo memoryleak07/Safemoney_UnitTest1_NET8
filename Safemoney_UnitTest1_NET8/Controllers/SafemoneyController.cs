@@ -10,20 +10,9 @@ using System.Threading.Tasks;
 
 namespace Client.Controllers
 {
-    public class SafemoneyController : ISafemoneyService
+    public class SafemoneyController(HttpClient httpClient)
     {
-        private readonly ISafemoneyService _httpClient;
         private HttpClient httpClient;
-
-        public SafemoneyController(ISafemoneyService httpClient)
-        {
-            _httpClient = httpClient;
-        }
-
-        public SafemoneyController(HttpClient httpClient)
-        {
-            this.httpClient = httpClient;
-        }
 
         // Generics
         public async Task<SMResponse<SMBase>> Reboot()
