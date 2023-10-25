@@ -1,4 +1,4 @@
-﻿namespace Client.Models.SMModels
+﻿namespace Client.Models.Safemoney.SMModels
 {
     public class SMTransactionsLog : SMBase
     {
@@ -6,6 +6,6 @@
         public int TotalCount { get; set; }
 
         [JsonProperty("transactionsLog")]
-        public List<SMTransactionsLogBase> TransactionsLog { get; set; }
+        public List<SMTransactionsLogList>? TransactionsLog { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Client.Classes;
-using Client.Models.SMModels;
+using Client.Models.Safemoney.SMModels;
 using Microsoft.Extensions.DependencyInjection;
 
 ServiceCollection services = new ();

@@ -1,6 +1,6 @@
-﻿using Client.Models.SMEnum;
+﻿using Client.Models.Safemoney.SMEnum;
 
-namespace Client.Models.SMModels
+namespace Client.Models.Safemoney.SMModels
 {
     public class SMPay : SMBase
     {

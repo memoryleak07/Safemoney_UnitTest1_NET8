@@ -1,27 +1,26 @@
-﻿using Client.Models.SMModels;
-
+﻿using Client.Models.Safemoney.SMModels;
 
 namespace Client.Interfaces
 {
     public interface ISafemoneyService
     {
         // Generics
-        Task<SMResponse<SMBase>> Reboot();
-        Task<SMResponse<SMBase>> PowerOff();
+        Task<SMBaseResponse<SMBase>> Reboot();
+        Task<SMBaseResponse<SMBase>> PowerOff();
         // Pay
-        Task<SMResponse<SMPayCreated>> Pay(object payload);
-        Task<SMResponse<SMPay>> PayBegin(object payload);
-        Task<SMResponse<SMPay>> PayDelete(object payload);
+        Task<SMBaseResponse<SMPayCreated>> Pay(object payload);
+        Task<SMBaseResponse<SMPay>> PayBegin(object payload);
+        Task<SMBaseResponse<SMPay>> PayDelete(object payload);
         // Withdrawals
-        Task<SMResponse<SMPayCreated>> WithdrawAsync(object payload);
-        Task<SMResponse<SMPay>> FastWithdrawAsync(object payload);
-        Task<SMResponse<SMPay>> DeleteFastWithdrawAsync(object payload);
-        Task<SMResponse<SMDenominations>> GetCashWithdrawLevel();
-        Task<SMResponse<SMCashWithdraw>> PostCashWithdrawLevel(object payload);
+        Task<SMBaseResponse<SMPayCreated>> WithdrawAsync(object payload);
+        Task<SMBaseResponse<SMPay>> FastWithdrawAsync(object payload);
+        Task<SMBaseResponse<SMPay>> DeleteFastWithdrawAsync(object payload);
+        Task<SMBaseResponse<SMDenominations>> GetCashWithdrawLevel();
+        Task<SMBaseResponse<SMCashWithdraw>> PostCashWithdrawLevel(object payload);
         // Inventory
-        Task<SMResponse<SMInventory>> GetInventoryAsync();
+        Task<SMBaseResponse<SMInventory>> GetInventoryAsync();
         // TransactionLog
-        Task<SMResponse<SMTransactionsLog>> GetTransactionsLogAsync();
+        Task<SMBaseResponse<SMTransactionsLog>> GetTransactionsLogAsync();
         // Home test only
         Task<HttpResponseMessage> MyGetMethodAsync();
         Task<HttpResponseMessage> MyPostMethodAsync(object? payload);

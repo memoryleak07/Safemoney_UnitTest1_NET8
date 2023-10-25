@@ -1,4 +1,4 @@
-﻿namespace Client.Models.SMEnum
+﻿namespace Client.Models.Safemoney.SMEnum
 {
     public enum ETransactionCode
     {

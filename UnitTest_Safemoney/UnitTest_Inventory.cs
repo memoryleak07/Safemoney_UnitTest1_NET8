@@ -1,6 +1,6 @@
 ﻿using Client.Classes._old;
-using Client.Models.SMEnum;
-using Client.Models.SMModels;
+using Client.Models.Safemoney.SMEnum;
+using Client.Models.Safemoney.SMModels;
 
 namespace UnitTestSafemoney
 {
@@ -8,7 +8,7 @@ namespace UnitTestSafemoney
     public class UnitTest_Inventory
     {
         private static RestClient client;
-        private static SMResponse<SMInventory> res;
+        private static SMBaseResponse<SMInventory> res;
 
         [TestInitialize]
         public void TestInitialize() // Initialize the RestClient

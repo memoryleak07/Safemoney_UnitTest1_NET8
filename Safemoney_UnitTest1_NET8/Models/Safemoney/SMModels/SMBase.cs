@@ -1,6 +1,6 @@
 ﻿global using Newtonsoft.Json;
 
-namespace Client.Models.SMModels
+namespace Client.Models.Safemoney.SMModels
 {
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class SMBase

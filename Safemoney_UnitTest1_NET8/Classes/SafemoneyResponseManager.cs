@@ -1,10 +1,10 @@
-﻿using Client.Models.SMModels;
+﻿using Client.Models.Safemoney.SMModels;
 
 namespace Client.Classes
 {
     public class SafemoneyResponseManager
     {
-        public static async Task<SMResponse<T>> ReadResponseAsync<T>(HttpResponseMessage response)
+        public static async Task<SMBaseResponse<T>> ReadResponseAsync<T>(HttpResponseMessage response)
         {
             if (!response.IsSuccessStatusCode)
             {
@@ -13,12 +13,12 @@ namespace Client.Classes
                     Code = (int)response.StatusCode, 
                     Reason = response.ReasonPhrase 
                 };
-                return SMResponse<T>.CreateErrorResponse(error);
+                return SMBaseResponse<T>.CreateErrorResponse(error);
             }
 
             var contentString = await response.Content.ReadAsStringAsync();
             var content = JsonConvert.DeserializeObject<T>(contentString);
-            return SMResponse<T>.CreateSuccessResponse(content);
+            return SMBaseResponse<T>.CreateSuccessResponse(content);
         }
     }
 }

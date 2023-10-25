@@ -1,4 +1,4 @@
-﻿namespace Client.Models.SMModels
+﻿namespace Client.Models.Safemoney.SMModels
 {
     public class SMCashLevel : SMBase
     {

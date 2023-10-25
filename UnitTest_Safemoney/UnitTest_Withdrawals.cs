@@ -1,12 +1,12 @@
-﻿using Client.Models.SMEnum;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Security.Principal;
 using System;
 using Newtonsoft.Json.Converters;
-using Client.Models.SMModels;
 using Client.Classes._old;
+using Client.Models.Safemoney.SMEnum;
+using Client.Models.Safemoney.SMModels;
 
 namespace UnitTestSafemoney
 {

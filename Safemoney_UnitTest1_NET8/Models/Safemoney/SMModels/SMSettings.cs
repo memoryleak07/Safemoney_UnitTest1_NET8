@@ -1,4 +1,4 @@
-﻿namespace Client.Models.SMModels
+﻿namespace Client.Models.Safemoney.SMModels
 {
     public class SMSettings : SMBase
     {
@@ -53,7 +53,7 @@
         }
 
         [JsonProperty("applicationSettings", NullValueHandling = NullValueHandling.Ignore)]
-        public SMApplicationSettings ApplicationSettings { get; set; }
+        public SMApplicationSettings? ApplicationSettings { get; set; }
 
         [JsonProperty("settingsInfo", NullValueHandling = NullValueHandling.Ignore)]
         public SMSettingsInfo SettingsInfo { get; set; }

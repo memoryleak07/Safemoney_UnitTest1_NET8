@@ -1,5 +1,5 @@
-﻿using Client.Models.SMEnum;
-using Client.Models.SMModels;
+﻿using Client.Models.Safemoney.SMEnum;
+using Client.Models.Safemoney.SMModels;
 using Newtonsoft.Json;
 
 namespace UnitTestSafemoney.TestJsonResponses
