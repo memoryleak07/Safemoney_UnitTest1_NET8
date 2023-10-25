@@ -1,38 +1,29 @@
-﻿// See https://aka.ms/new-console-template for more information   
-using Client.Classes;
+﻿using Client.Classes;
 using Microsoft.Extensions.DependencyInjection;
 
 ServiceCollection services = new ();
-IHttpClientBuilder httpClientBuilder = services.AddHttpClient("test", httpClient => { });
-//{
-//    httpClient.BaseAddress = new Uri("https://localhost");
-//});
+IHttpClientBuilder httpClientBuilder = services.AddHttpClient("safemoney", httpClient => { });
 
-//  creating the HttpClient using the IHttpClientFactory,
-//  and the settings are encapsulated within the TestRestClient itself. 
-services.AddScoped<TestRestClient>(provider =>
+//  create the HttpClient using the IHttpClientFactory,
+//  the settings are encapsulated within the TestRestClient itself. 
+services.AddScoped<InitClient>(provider =>
 {
     var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
-    return new TestRestClient(httpClientFactory, "test");
+    return new InitClient(httpClientFactory, "safemoney");
 });
 
 var servicesProvider = services.BuildServiceProvider(validateScopes: true);
 using (var scope = servicesProvider.CreateScope())
 {
-    var client = scope.ServiceProvider.GetRequiredService<TestRestClient>();
+    var client = scope.ServiceProvider.GetRequiredService<InitClient>();
 
     // Test
+    string baseAddress = "https://httpbin.org/";
 
-    // Use the RestClient and its encapsulated HttpClient and HttpRequestManager
-    var httpClient = client.HttpClient;
-    var requestManager = client.RequestManager;
+    var smClient = client.CreateSafemoneyController(baseAddress);
 
-    // Now you can use httpClient for making requests and requestManager for managing requests.
-    string url = "https://httpbin.org/";
-    httpClient.BaseAddress = new Uri(url);
-    var response = await httpClient.GetAsync("/get");
-    Console.WriteLine(response);
-    // You can use requestManager for any additional request management if needed.
+    var response = await smClient.PayDelete("/get");
 
+    Console.WriteLine(response.Content.ToString());
 
 }

@@ -1,4 +1,4 @@
-﻿namespace Client.Classes
+﻿namespace Client.Classes._old
 {
     public class RestClient
     {

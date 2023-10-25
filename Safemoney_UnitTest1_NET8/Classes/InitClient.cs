@@ -1,28 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Client.Controllers;
 
 namespace Client.Classes
 {
-    public class TestRestClient
+    public class InitClient
     {
         private readonly IHttpClientFactory _clientFactory;
         private readonly string _clientName;
-        private readonly HttpClient _httpClient;
-        private readonly HttpRequestManager _requestManager;
 
-        public HttpClient HttpClient => _httpClient;
-        public HttpRequestManager RequestManager => _requestManager;
-
-        public TestRestClient(IHttpClientFactory clientFactory, string clientName)
+        public InitClient(IHttpClientFactory clientFactory, string clientName)
         {
             _clientFactory = clientFactory;
             _clientName = clientName;
-            _httpClient = _clientFactory.CreateClient(clientName);
-            _requestManager = new HttpRequestManager(_httpClient);
         }
+
+        public SafemoneyController CreateSafemoneyController(string baseAddress)
+        {
+            using HttpClient httpClient = _clientFactory.CreateClient(_clientName);
+
+            // Set the base address for the HttpClient
+            httpClient.BaseAddress = new Uri(baseAddress);
+
+            return new SafemoneyController(httpClient);
+        }
+
     }
 }
 

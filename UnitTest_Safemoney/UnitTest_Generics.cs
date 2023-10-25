@@ -1,4 +1,6 @@
-﻿namespace UnitTestSafemoney
+﻿using Client.Classes._old;
+
+namespace UnitTestSafemoney
 {
     [TestClass]
     public class UnitTest_Generics

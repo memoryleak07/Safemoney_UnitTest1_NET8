@@ -1,3 +1,4 @@
+using Client.Classes._old;
 using Client.Models.SMEnum;
 
 namespace UnitTestSafemoney

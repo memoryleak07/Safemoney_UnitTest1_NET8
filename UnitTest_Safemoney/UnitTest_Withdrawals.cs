@@ -6,6 +6,7 @@ using System.Security.Principal;
 using System;
 using Newtonsoft.Json.Converters;
 using Client.Models.SMModels;
+using Client.Classes._old;
 
 namespace UnitTestSafemoney
 {

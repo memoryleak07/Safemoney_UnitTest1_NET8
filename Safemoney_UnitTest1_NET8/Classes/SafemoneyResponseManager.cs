@@ -2,7 +2,7 @@
 
 namespace Client.Classes
 {
-    public class HttpResponseManager
+    public class SafemoneyResponseManager
     {
         public static async Task<SMResponse<T>> ReadResponseAsync<T>(HttpResponseMessage response)
         {
