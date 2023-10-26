@@ -1,35 +1,39 @@
 ﻿using Client.Classes;
+using Client.Controllers;
+using Client.Interfaces;
 using Client.Models.Safemoney.SMModels;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-ServiceCollection services = new ();
-IHttpClientBuilder httpClientBuilder = services.AddHttpClient("safemoney", httpClient => { });
+var builder = Host.CreateApplicationBuilder(args);
 
-services.AddScoped<InitClient>(provider =>
+builder.Services.AddScoped<ISafemoneyService, SafemoneyService>();
+builder.Services.AddHttpClient("safemoney", (httpClient) =>
 {
-    IHttpClientFactory httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
-    return new InitClient(httpClientFactory, "safemoney");
+    string url = builder.Configuration.GetValue<string>("Safemoney:Url") ?? throw new KeyNotFoundException("Url not found");
+    string username = builder.Configuration.GetValue<string>("Safemoney:Username") ?? throw new KeyNotFoundException("username not found");
+    string password = builder.Configuration.GetValue<string>("Safemoney:Password") ?? throw new KeyNotFoundException("password not found");
+
+    httpClient.BaseAddress = new Uri(url);
+    // Add basic Baic Auth to httpClient RequestHeaders
+    HttpUtility.AddHttpRequestHeaders(httpClient, username, password);
+
 });
 
-ServiceProvider servicesProvider = services.BuildServiceProvider(validateScopes: true);
+//Log4Net, NLog e Serilog
 
-using (IServiceScope scope = servicesProvider.CreateScope())
+var app = builder.Build();
+
+var client = app.Services.GetRequiredService<ISafemoneyService>();
+
+SMPay payload = new()
 {
-    InitClient initClient = scope.ServiceProvider.GetRequiredService<InitClient>();
+    ToBePaid = 10,
+};
 
-    // Test
-    string baseAddress = "http://192.168.34.212:7409/";
-    string username = "pin";
-    string password = "0000";
+var response = await client.Pay(payload);
 
-    Client.Controllers.SafemoneyController client = initClient.CreateSafemoneyController(baseAddress, username, password);
+Console.WriteLine(response.Content.Token);
 
-    SMPay payload = new()
-    {
-        ToBePaid = 10,
-    };
-
-    var response = await client.Pay(payload);
-
-    Console.WriteLine(response.Content.Token);
-}
+//app.Run();
