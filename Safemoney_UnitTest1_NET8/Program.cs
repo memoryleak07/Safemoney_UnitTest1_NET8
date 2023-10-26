@@ -7,22 +7,22 @@ IHttpClientBuilder httpClientBuilder = services.AddHttpClient("safemoney", httpC
 
 services.AddScoped<InitClient>(provider =>
 {
-    var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
+    IHttpClientFactory httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
     return new InitClient(httpClientFactory, "safemoney");
 });
 
 ServiceProvider servicesProvider = services.BuildServiceProvider(validateScopes: true);
 
-using (var scope = servicesProvider.CreateScope())
+using (IServiceScope scope = servicesProvider.CreateScope())
 {
-    var initClient = scope.ServiceProvider.GetRequiredService<InitClient>();
+    InitClient initClient = scope.ServiceProvider.GetRequiredService<InitClient>();
 
     // Test
     string baseAddress = "http://192.168.34.212:7409/";
     string username = "pin";
     string password = "0000";
 
-    var client = initClient.CreateSafemoneyController(baseAddress, username, password);
+    Client.Controllers.SafemoneyController client = initClient.CreateSafemoneyController(baseAddress, username, password);
 
     SMPay payload = new()
     {

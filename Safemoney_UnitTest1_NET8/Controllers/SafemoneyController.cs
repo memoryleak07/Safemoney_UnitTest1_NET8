@@ -1,11 +1,12 @@
 ﻿using Client.Classes;
+using Client.Interfaces;
 using Client.Models.Safemoney.SMModels;
 using System.Net.Http.Json;
 
 
 namespace Client.Controllers
 {
-    public class SafemoneyController(HttpClient _httpClient) 
+    public class SafemoneyController(HttpClient _httpClient) : ISafemoneyService
     {
         // Generics
         public async Task<SMBaseResponse<SMBase>> Reboot()

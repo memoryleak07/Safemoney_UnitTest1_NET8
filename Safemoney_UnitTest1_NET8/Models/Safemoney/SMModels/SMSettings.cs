@@ -34,7 +34,7 @@
             public string DispensingMode { get; set; }
 
             [JsonProperty("language")]
-            public string Language { get; set; }
+            public string? Language { get; set; }
 
             [JsonProperty("customerMode")]
             public bool CustomerMode { get; set; }
@@ -56,7 +56,7 @@
         public SMApplicationSettings? ApplicationSettings { get; set; }
 
         [JsonProperty("settingsInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public SMSettingsInfo SettingsInfo { get; set; }
+        public SMSettingsInfo? SettingsInfo { get; set; }
 
     }
 }

@@ -7,7 +7,7 @@ namespace Client.Classes
     {
         public static Uri BuildUrl(string? scheme, string baseAddress, int? port = null)
         {
-            UriBuilder urlBuilder = new UriBuilder()
+            UriBuilder urlBuilder = new ()
             {
                 Scheme = scheme,
                 Host = baseAddress,
@@ -34,10 +34,10 @@ namespace Client.Classes
             string jsonPayload = JsonConvert.SerializeObject(payload);
 
             // Create StringContent with JSON payload and set the content type
-            var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+            StringContent content = new (jsonPayload, Encoding.UTF8, "application/json");
 
             // Create an HttpRequestMessage with the method, URL, and content
-            var request = new HttpRequestMessage(method, url);
+            HttpRequestMessage request = new (method, url);
             request.Content = content;
 
             return request;
